@@ -134,3 +134,138 @@
   </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burntangle | Secure Portal</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: #101b2d;
+      color: #17243a;
+    }
+    .container {
+      width: 100%;
+      max-width: 420px;
+      padding: 38px 30px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px #0005;
+    }
+    .brand {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .brand h1 {
+      margin: 0;
+      color: #17365c;
+      font-size: 32px;
+      letter-spacing: 2px;
+    }
+    .brand p {
+      color: #718096;
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+    h2 { text-align: center; font-size: 22px; }
+    .subtitle {
+      text-align: center;
+      color: #718096;
+      font-size: 14px;
+      margin-bottom: 28px;
+    }
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: bold;
+      margin: 16px 0 7px;
+    }
+    input {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #d8dee8;
+      border-radius: 7px;
+      font-size: 15px;
+    }
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 22px;
+      border: 0;
+      border-radius: 7px;
+      background: #17365c;
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
+    }
+    button:disabled { opacity: .6; }
+    .notice {
+      margin-top: 22px;
+      padding: 12px;
+      background: #f1f5f9;
+      border-radius: 7px;
+      color: #526176;
+      font-size: 12px;
+      text-align: center;
+      line-height: 1.6;
+    }
+    footer {
+      text-align: center;
+      color: #8993a3;
+      font-size: 11px;
+      margin-top: 25px;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="brand">
+      <h1>BURNTANGLE</h1>
+      <p>SECURE CORPORATE PORTAL</p>
+    </div>
+
+    <h2>Welcome Back</h2>
+    <p class="subtitle">Sign in to access your workspace</p>
+
+    <form id="loginForm">
+      <label for="email">Email Address</label>
+      <input id="email" type="email"
+        placeholder="Enter your email" required>
+
+      <label for="password">Password</label>
+      <input id="password" type="password"
+        placeholder="Enter your password" required>
+
+      <button type="submit">Sign In</button>
+    </form>
+
+    <div class="notice">
+      Access is restricted to authorised users.
+      Registration is by invitation only.
+      <br><br>
+      Contact your administrator for access.
+    </div>
+
+    <footer>
+      © 2026 Burntangle. All rights reserved.
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("loginForm")
+      .addEventListener("submit", function(event) {
+        event.preventDefault();
+        alert("Authentication is not yet connected. Please contact your administrator.");
+      });
+  </script>
+</body>
+</html>
