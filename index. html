@@ -1,271 +1,320 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Burntangle | Secure Portal</title>
+  <meta name="theme-color" content="#102b50">
+  <title>Burntangle | Private Storage</title>
   <style>
+    :root {
+      --navy: #102b50;
+      --blue: #1d4778;
+      --pale: #edf3fa;
+      --ink: #17263a;
+      --muted: #718096;
+      --white: #ffffff;
+    }
+
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(145deg, #eaf0f7, #ffffff 55%, #e6eef8);
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: var(--navy);
+      color: white;
+      padding: 19px 7%;
       display: flex;
       align-items: center;
-      justify-content: center;
-      padding: 20px;
-      font-family: Arial, sans-serif;
-      background: #101b2d;
-      color: #17243a;
+      justify-content: space-between;
     }
-    .container {
-      width: 100%;
-      max-width: 420px;
-      padding: 38px 30px;
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 20px 60px #0005;
-    }
+
     .brand {
-      text-align: center;
-      margin-bottom: 30px;
+      font-size: 23px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
     }
-    .brand h1 {
-      margin: 0;
-      color: #17365c;
-      font-size: 32px;
-      letter-spacing: 2px;
+
+    .brand span { color: #a9c9ee; }
+
+    .tagline {
+      font-size: 12px;
+      color: #d5e2f1;
+      margin-top: 4px;
     }
-    .brand p {
-      color: #718096;
-      font-size: 13px;
-      letter-spacing: 2px;
+
+    .secure {
+      font-size: 12px;
+      color: #d5e2f1;
     }
-    h2 { text-align: center; font-size: 22px; }
-    .subtitle {
-      text-align: center;
-      color: #718096;
+
+    main {
+      width: min(100% - 32px, 440px);
+      margin: auto;
+      padding: 38px 0;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #dce5ef;
+      border-radius: 18px;
+      padding: 34px 30px;
+      box-shadow: 0 16px 45px rgba(16, 43, 80, .10);
+    }
+
+    .mark {
+      width: 54px;
+      height: 54px;
+      border-radius: 15px;
+      background: var(--pale);
+      color: var(--navy);
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      margin: 0 0 9px;
+      color: var(--navy);
+      font-size: 27px;
+    }
+
+    .intro {
+      color: var(--muted);
+      line-height: 1.55;
       font-size: 14px;
-      margin-bottom: 28px;
+      margin: 0 0 27px;
     }
+
     label {
       display: block;
       font-size: 13px;
-      font-weight: bold;
-      margin: 16px 0 7px;
+      font-weight: 700;
+      margin: 17px 0 8px;
     }
+
     input {
       width: 100%;
-      padding: 13px;
-      border: 1px solid #d8dee8;
-      border-radius: 7px;
+      padding: 14px 13px;
+      border: 1px solid #ccd7e4;
+      border-radius: 9px;
       font-size: 15px;
+      outline: none;
+      background: #fbfdff;
     }
-    button {
-      width: 100%;
-      padding: 14px;
-      margin-top: 22px;
-      border: 0;
-      border-radius: 7px;
-      background: #17365c;
-      color: white;
-      font-size: 15px;
-      font-weight: bold;
+
+    input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(29,71,120,.10);
     }
-    button:disabled { opacity: .6; }
-    .notice {
-      margin-top: 22px;
-      padding: 12px;
-      background: #f1f5f9;
-      border-radius: 7px;
-      color: #526176;
-      font-size: 12px;
-      text-align: center;
-      line-height: 1.6;
-    }
-    footer {
-      text-align: center;
-      color: #8993a3;
-      font-size: 11px;
-      margin-top: 25px;
-    }
-  </style>
-</head>
-<body>
-  <main class="container">
-    <div class="brand">
-      <h1>BURNTANGLE</h1>
-      <p>SECURE CORPORATE PORTAL</p>
-    </div>
 
-    <h2>Welcome Back</h2>
-    <p class="subtitle">Sign in to access your workspace</p>
-
-    <form id="loginForm">
-      <label for="email">Email Address</label>
-      <input id="email" type="email"
-        placeholder="Enter your email" required>
-
-      <label for="password">Password</label>
-      <input id="password" type="password"
-        placeholder="Enter your password" required>
-
-      <button type="submit">Sign In</button>
-    </form>
-
-    <div class="notice">
-      Access is restricted to authorised users.
-      Registration is by invitation only.
-      <br><br>
-      Contact your administrator for access.
-    </div>
-
-    <footer>
-      © 2026 Burntangle. All rights reserved.
-    </footer>
-  </main>
-
-  <script>
-    document.getElementById("loginForm")
-      .addEventListener("submit", function(event) {
-        event.preventDefault();
-        alert("Authentication is not yet connected. Please contact your administrator.");
-      });
-  </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Burntangle | Secure Portal</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      min-height: 100vh;
+    .password-wrap {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      font-family: Arial, sans-serif;
-      background: #101b2d;
-      color: #17243a;
+      gap: 8px;
     }
-    .container {
+
+    .password-wrap input {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .show {
+      border: 1px solid #ccd7e4;
+      background: #f4f7fb;
+      color: var(--navy);
+      border-radius: 9px;
+      padding: 0 12px;
+      font-weight: 700;
+    }
+
+    .primary {
       width: 100%;
-      max-width: 420px;
-      padding: 38px 30px;
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 20px 60px #0005;
-    }
-    .brand {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .brand h1 {
-      margin: 0;
-      color: #17365c;
-      font-size: 32px;
-      letter-spacing: 2px;
-    }
-    .brand p {
-      color: #718096;
-      font-size: 13px;
-      letter-spacing: 2px;
-    }
-    h2 { text-align: center; font-size: 22px; }
-    .subtitle {
-      text-align: center;
-      color: #718096;
-      font-size: 14px;
-      margin-bottom: 28px;
-    }
-    label {
-      display: block;
-      font-size: 13px;
-      font-weight: bold;
-      margin: 16px 0 7px;
-    }
-    input {
-      width: 100%;
-      padding: 13px;
-      border: 1px solid #d8dee8;
-      border-radius: 7px;
-      font-size: 15px;
-    }
-    button {
-      width: 100%;
-      padding: 14px;
-      margin-top: 22px;
+      margin-top: 24px;
+      padding: 15px;
       border: 0;
-      border-radius: 7px;
-      background: #17365c;
+      border-radius: 9px;
+      background: var(--navy);
       color: white;
       font-size: 15px;
-      font-weight: bold;
+      font-weight: 700;
+      cursor: pointer;
     }
-    button:disabled { opacity: .6; }
-    .notice {
-      margin-top: 22px;
-      padding: 12px;
-      background: #f1f5f9;
-      border-radius: 7px;
-      color: #526176;
-      font-size: 12px;
+
+    .primary:active { background: var(--blue); }
+
+    .switch {
       text-align: center;
-      line-height: 1.6;
+      font-size: 13px;
+      color: var(--muted);
+      margin: 21px 0 0;
     }
+
+    .switch button {
+      border: 0;
+      background: none;
+      color: var(--blue);
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .notice {
+      display: none;
+      margin-top: 16px;
+      padding: 12px;
+      border-radius: 8px;
+      background: #fff6df;
+      color: #74520a;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
     footer {
       text-align: center;
-      color: #8993a3;
+      color: #7b8999;
       font-size: 11px;
-      margin-top: 25px;
+      padding: 20px;
+    }
+
+    @media (max-width: 420px) {
+      .card { padding: 28px 22px; }
+      .secure { display: none; }
     }
   </style>
 </head>
+
 <body>
-  <main class="container">
-    <div class="brand">
-      <h1>BURNTANGLE</h1>
-      <p>SECURE CORPORATE PORTAL</p>
+  <header>
+    <div>
+      <div class="brand">BURNTANGLE<span>.</span></div>
+      <div class="tagline">PRIVATE STORAGE APPLICATION</div>
     </div>
+    <div class="secure">PRIVATE • SECURE • ORGANIZED</div>
+  </header>
 
-    <h2>Welcome Back</h2>
-    <p class="subtitle">Sign in to access your workspace</p>
+  <main>
+    <section class="card">
+      <div class="mark">B</div>
 
-    <form id="loginForm">
-      <label for="email">Email Address</label>
-      <input id="email" type="email"
-        placeholder="Enter your email" required>
+      <h1 id="heading">Welcome Back</h1>
 
-      <label for="password">Password</label>
-      <input id="password" type="password"
-        placeholder="Enter your password" required>
+      <p class="intro" id="intro">
+        Sign in to access your Burntangle private storage account.
+      </p>
 
-      <button type="submit">Sign In</button>
-    </form>
+      <form id="authForm">
+        <label for="email">Email address</label>
 
-    <div class="notice">
-      Access is restricted to authorised users.
-      Registration is by invitation only.
-      <br><br>
-      Contact your administrator for access.
-    </div>
+        <input
+          id="email"
+          type="email"
+          placeholder="Enter your email"
+          autocomplete="email"
+          required
+        >
 
-    <footer>
-      © 2026 Burntangle. All rights reserved.
-    </footer>
+        <label for="password">Password</label>
+
+        <div class="password-wrap">
+          <input
+            id="password"
+            type="password"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+            minlength="6"
+            required
+          >
+
+          <button class="show" type="button" id="togglePassword">
+            Show
+          </button>
+        </div>
+
+        <button class="primary" type="submit" id="submitButton">
+          Sign In
+        </button>
+      </form>
+
+      <p class="switch" id="switchText">
+        Don't have an account?
+        <button type="button" id="switchButton">Register</button>
+      </p>
+
+      <div class="notice" id="notice">
+        This is the Burntangle login-page interface.
+        Authentication is not connected yet.
+        Connect a secure authentication service before using real
+        accounts or storing documents.
+      </div>
+    </section>
   </main>
 
+  <footer>
+    © 2026 Burntangle. All rights reserved.
+  </footer>
+
   <script>
-    document.getElementById("loginForm")
-      .addEventListener("submit", function(event) {
-        event.preventDefault();
-        alert("Authentication is not yet connected. Please contact your administrator.");
-      });
+    const form = document.getElementById('authForm');
+    const heading = document.getElementById('heading');
+    const intro = document.getElementById('intro');
+    const submitButton = document.getElementById('submitButton');
+    const switchText = document.getElementById('switchText');
+    const switchButton = document.getElementById('switchButton');
+    const password = document.getElementById('password');
+    const togglePassword = document.getElementById('togglePassword');
+    const notice = document.getElementById('notice');
+
+    let registering = false;
+
+    togglePassword.addEventListener('click', () => {
+      const hidden = password.type === 'password';
+      password.type = hidden ? 'text' : 'password';
+      togglePassword.textContent = hidden ? 'Hide' : 'Show';
+    });
+
+    switchButton.addEventListener('click', () => {
+      registering = !registering;
+
+      heading.textContent = registering
+        ? 'Create Account'
+        : 'Welcome Back';
+
+      intro.textContent = registering
+        ? 'Create your Burntangle private storage account.'
+        : 'Sign in to access your Burntangle private storage account.';
+
+      submitButton.textContent = registering
+        ? 'Create Account'
+        : 'Sign In';
+
+      switchText.firstChild.textContent = registering
+        ? 'Already have an account? '
+        : "Don't have an account? ";
+
+      switchButton.textContent = registering
+        ? 'Sign In'
+        : 'Register';
+
+      password.autocomplete = registering
+        ? 'new-password'
+        : 'current-password';
+
+      notice.style.display = 'none';
+    });
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      notice.style.display = 'block';
+    });
   </script>
 </body>
 </html>
